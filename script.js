@@ -1,14 +1,15 @@
 // 1. Створіть 3 змінних, занесіть в них свої прізвище, ім'я та по-батькові.
 
-let name, middlename, surname;
+let name, middleName, surName;
 
-name = 'Andrii';
-middlename = 'Volodymirovich';
-surname = 'Kravchuk';
+name = 'Андрій';
+middleName = 'Володимирович';
+surName = 'Кравчук';
 
 // 2. Виведіть в консоль кількість літер в прізвищі.
 
-console.log(`Кількість літер в прізвищі ${surname}: ${surname.length}`);
+let surNameLength = surName.length;
+console.log(`Кількість літер в прізвищі ${surName}: ${surNameLength}`);
 
 // 3. Виведіть в консоль знак копірайту, прізвище та ініціали, використовуючи конкатинацію строк:
 
@@ -17,17 +18,15 @@ console.log(copyright);
 
 // 4. Виведіть в консоль однією командою прізвище, ім'я та по-батькові в стовбчик:
 
-console.log(`Кравчук \nАндрій \nВолодимирович`);
+console.log(`Кравчук\nАндрій\nВолодимирович`);
 
 // 5. Виведіть в консоль строку з трьох літер: останні літери кожної змінної.
 
 let nameLength = name.length;
-let middlenameLength = middlename.length;
-let surnameLength = surname.length;
+let middleNameLength = middleName.length;
 
-console.log(`Остання літера в імені ${name}: ${name[nameLength - 1]}`);
-console.log(`Остання літера в імені ${middlename}: ${middlename[middlenameLength - 1]}`);
-console.log(`Остання літера в імені ${surname}: ${surname[surname.length - 1]}`);
+console.log(`Строка з трьох останніх літер кожної змінної: 
+	${name[nameLength - 1]}${middleName[middleNameLength - 1]}${surName[surNameLength - 1]}`);
 
 /* 6. Створіть строку та виведіть її в консоль:
 			Компанію "Об'єкт" визнано банкрутом.
@@ -54,7 +53,7 @@ function stringCalc(myName, mySurname){
 
 stringCalc(myName, mySurname);
 
-/* 3. Дано телефон в форматі "0682091234". Потрібно його перетворити у формат "+38 (068) 209-12-34".
+/* 8. Дано телефон в форматі "0682091234". Потрібно його перетворити у формат "+38 (068) 209-12-34".
 Створіть функцію, яка виконує цю задачу. */
 
 function phoneConvert(phone){
@@ -68,33 +67,34 @@ function phoneConvert(phone){
 
 phoneConvert('0682091234');
 
-// 4. Задайте у змінну своє ім'я. Виведіть його повідомленням на екран у верхньому та нижньому регістрах.
+// 9. Задайте у змінну своє ім'я. Виведіть його повідомленням на екран у верхньому та нижньому регістрах.
 
 console.log(`Ім'я ${name} у верхньому регістрі: ${name.toUpperCase()}`);
 console.log(`Ім'я ${name} у нижньому регістрі: ${name.toLowerCase()}`);
 
-// 5. Виведіть в консоль індекс букви "ї" в стрічці "Ми приїхали в Запоріжжя".
+// 10. Виведіть в консоль індекс букви "ї" в стрічці "Ми приїхали в Запоріжжя".
 
 let travel = 'Ми приїхали в Запоріжжя';
+let travelIndex = travel.indexOf('ї');
+let spaceIndex = travel.indexOf(' ');
+console.log('індекс букви "ї" в стрічці "Ми приїхали в Запоріжжя": ' + travelIndex);
 
-console.log(`індекс букви "ї" в стрічці "Ми приїхали в Запоріжжя": ${travel.indexOf('ї')}`);
-
-// 6. Розбийте цю стрічку на окремі слова та виведіть масив в консоль.
+// 11. Розбийте цю стрічку на окремі слова та виведіть масив в консоль.
 
 let travelWord = travel.split(' ');
 
 console.log(travelWord);
 
-/* 7. Виведіть в консоль 
+/* 12. Виведіть в консоль 
 	підстроку з 6 по 20 символ включно;
 	виведіть в консоль підстроку починаючи з 3 символа, довжиною 8 символів;
 	виведіть в консоль підстроку починаючи з букви ї до пробіла, не включаючи його. */
 
 console.log(`підстрока починаючи з 6 по 20 символ включно: ${travel.substring(6, 21)}`);
 console.log(`підстрока починаючи з 3 символа, довжиною 8 символів: ${travel.substr(3, 8)}`);
-console.log(`підстрока починаючи з букви ї до пробіла, не включаючи його: ${travel.substr(6, 5)}`);
+console.log('підстрока починаючи з букви ї до пробіла, не включаючи його: ' + travel.substr(travelIndex, spaceIndex));
 
-/* 8. Задайте у дві змінні ваші ім'я та прізвище.
+/* 13. Задайте у дві змінні ваші ім'я та прізвище.
 	Створіть функцію, що повертає строку, яка починається з перших трьох символів вашого імені 
 	та останніх трьох символів прізвища.
 	Результат виведіть в консоль. */
@@ -106,4 +106,4 @@ function makeStr(name, surname){
 		nameSym + surnameSym);
 }
 
-makeStr(name, surname);
+makeStr(name, surName);
